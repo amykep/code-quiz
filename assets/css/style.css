@@ -1,0 +1,47 @@
+.wrapper{
+    width: 80%;
+    height:auto;
+    margin: 30px auto;
+    padding: 10px;
+    border: solid 1px rgb(3, 50, 138);
+}
+
+a:hover{
+    background-color: rgb(215, 179, 248);
+    border-radius: 0.25;
+    
+}
+.wrapper h1, h4, p{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+.divTime{
+    padding: 15px 32px;
+    display: inline;
+    float: right;
+}
+
+.startquiz{
+    background-color: rgb(28, 0, 128);
+    margin:30px auto;
+    padding: 15px 32px;
+    font-size: x-large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+.goback, .clear{
+    background-color: rgb(28, 0, 128);
+    margin: 50px 10px;
+    padding: 5px 20px;
+    font-size: x-large;
+    color: white;
+}
+.initials{
+    background-color: rgb(215, 179, 248);
+}
