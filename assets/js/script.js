@@ -1,7 +1,7 @@
 // declare variables
 let wrapperEl = document.querySelector("wrapper");
 let timerEl = document.querySelector("#timer");
-var codeQuestionsEl = document.querySelector("#quizquestions");
+const codeQuestionsEl = document.querySelector("#quizquestions");
 let qchoicesEl = document.querySelector("#qchoices");
 let startQuizEl = document.querySelector("#startquiz");
 
