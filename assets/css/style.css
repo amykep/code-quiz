@@ -23,6 +23,9 @@ a:hover{
     display: inline;
     float: right;
 }
+.li{
+    font-size: x-large;
+}
 
 .startquiz{
     background-color: rgb(28, 0, 128);
