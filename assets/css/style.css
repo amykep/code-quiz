@@ -49,6 +49,24 @@ a:hover{
     background-color: rgb(215, 179, 248);
     width: fit-content;
 }
+
+#highscore {
+    background-color: rgb(201, 151, 248);
+    margin-top: 10px;
+    padding: 5px 15px;
+    width: 80%;
+    font-size: 18px;
+    color: white;
+}
+
+.eval{
+    background-color: rgb(246, 207, 250);
+    border-top: solid 3px;
+    border-color: black;
+    margin-top: 20px;
+    padding: 10px;
+}
+
 .startquiz{
     background-color: rgb(28, 0, 128);
     border-radius: 15px;
@@ -70,4 +88,21 @@ a:hover{
 }
 .initials{
     background-color: rgb(215, 179, 248);
+}
+#label{
+    font-size: large;
+    padding: 5px;
+    margin: 7px ;
+    color:rgb(28, 0, 128); ;
+}
+#initials{
+    padding: 5px;
+    margin: 7px ;
+    border: solid 1px coral;
+}
+#submit{
+    background-color: rgb(28, 0, 128);
+    border-radius: 7px;
+    font-size: large;
+    color: white;
 }
