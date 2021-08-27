@@ -5,7 +5,7 @@ const codeQuestionsEl = document.querySelector("#quizquestions");
 var qchoicesEl = document.querySelector("#qchoices");
 var startQuizEl = document.querySelector("#startquiz");
 
-var secondsLeft = 35;
+var secondsLeft = 75;
 var timeInterval = 0;
 var penalty = 10;
 var questionIndex = 0
