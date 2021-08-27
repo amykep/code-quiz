@@ -8,8 +8,9 @@ var startQuizEl = document.querySelector("#startquiz");
 var secondsLeft = 35;
 var timeInterval = 0;
 var penalty = 10;
-var choicesList = document.createElement("ul");
 var questionIndex = 0
+var choicesList = document.createElement("ul");
+
 
 
 var questions = [
@@ -41,12 +42,13 @@ var questions = [
 ];
 
 
-// Triggers timer on button, shows user a display of questions on the screen
+// Triggers timer on button and shows user a display of questions on the screen
 startQuizEl.addEventListener("click", function ()
 {
-    console.log("timer")
     if (timeInterval === 0)
     {
+        timerEl.textContent = "Time: " + secondsLeft;
+
         timeInterval = setInterval(function ()
         {
             secondsLeft--;
@@ -59,12 +61,8 @@ startQuizEl.addEventListener("click", function ()
             }
         }, 1000);
     }
+    startQuizEl.style.display = "none";
     render(questionIndex);
-    if ((questionIndex + 1) < questions.length)
-    {
-        questionIndex++;
-    }
-
 }
 );
 
@@ -75,6 +73,7 @@ function processQuestion(newChoice)
     listItem.className = "li";
     codeQuestionsEl.appendChild(choicesList);
     choicesList.appendChild(listItem);
+    listItem.addEventListener("click", (check));
 }
 
 // append quiz questionstimer
@@ -86,9 +85,42 @@ function render(param)
     var questionTitle = questions[param].title;
     var questionChoices = questions[param].choices;
     codeQuestionsEl.textContent = questionTitle;
-    // codeQuestionsEl.className = "li";
+    codeQuestionsEl.className = "qchoices";
 
     // append quiz choices
     questionChoices.forEach(processQuestion)
 }
 
+
+// compare choices with answer
+function check(event)
+{
+    var evaluation = document.createElement("div");
+
+    if (event.target.matches("li"))
+    {
+
+        if (event.target.textContent == questions[questionIndex].answer)
+        {
+            score++
+            evaluation.textContent = "Correct, the answer is " + questions[questionIndex].answer;
+        }
+        else
+        {
+            secondsLeft = secondsLeft - penalty;
+            evaluation.textContent = "Incorrect, the correct answer is " + questions[questionIndex].answer;
+        }
+    }
+    questionIndex++;
+    if ((questionIndex) == questions.length)
+    {
+        codeQuestionsEl.innerHTML = "<h2>End of quiz! You received a score of  </h2>" + secondsLeft;
+
+    }
+    else
+    {
+        render(questionIndex);
+    }
+
+    codeQuestionsEl.appendChild(evaluation);
+}
